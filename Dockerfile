@@ -8,7 +8,7 @@ COPY ./app /app/app
 COPY ./requirements.txt /app/requirements.txt
 
 RUN pip install --no-cache-dir --upgrade pip \
-    && if [ "$INSTALL_REQUIREMENTS" = "true" ]; then pip install --no-cache-dir -r /app/requirements.txt; fi
+    && pip install --no-cache-dir -r /app/requirements.txt
 
 COPY alembic.ini /app/alembic.ini
 COPY app/migrations /app/app/migrations
